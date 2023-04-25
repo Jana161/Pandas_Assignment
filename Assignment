@@ -1,0 +1,125 @@
+# Pandas-Assignment
+
+Q1. How do you load a CSV file into a Pandas DataFrame?
+sol.import pandas as pd
+    df = pd.read_csv('filename.csv')
+    In this example, we import the Pandas library and then use the read_csv() function to read the CSV file 'filename.csv' into a DataFrame called df. By default, the first row of the CSV file is assumed to be the header row, and the column names are automatically inferred from this row. If the CSV file does not have a header row, you can specify this using the header parameter:  
+    
+    
+    
+ 
+Q2. How do you check the data type of a column in a Pandas DataFrame?
+You can check the data type of a column in a Pandas DataFrame using the dtypes attribute. Here's an example:
+import pandas as pd
+
+df = pd.read_csv('filename.csv')
+print(df.dtypes)
+
+
+
+
+
+Q3. How do you select rows from a Pandas DataFrame based on a condition?
+
+To select rows from a Pandas DataFrame based on a condition, you can use boolean indexing. Boolean indexing is a technique where you create a boolean mask, which is a Series or DataFrame of True/False values that correspond to whether the rows in the original DataFrame meet a certain condition or not.
+import pandas as pd
+
+df = pd.read_csv('filename.csv')
+mask = df['column_name'] > 5
+result = df[mask]
+print(result)
+
+
+
+Q4. How do you rename columns in a Pandas DataFrame?
+To rename columns in a Pandas DataFrame, you can use the rename() method. Here's an example:
+
+import pandas as pd
+df = pd.read_csv('filename.csv')
+df = df.rename(columns={'old_column_name': 'new_column_name'})
+print(df.head())
+
+
+
+
+Q5. How do you drop columns in a Pandas DataFrame?
+To drop columns in a Pandas DataFrame, you can use the drop() method. Here's an example:
+import pandas as pd
+
+df = pd.read_csv('filename.csv')
+df = df.drop('column_name', axis=1)
+print(df.head())
+
+
+
+
+Q6. How do you find the unique values in a column of a Pandas DataFrame?
+To find the unique values in a column of a Pandas DataFrame, you can use the unique() method. Here's an example:
+import pandas as pd
+df = pd.read_csv('filename.csv')
+unique_values = df['column_name'].unique()
+print(unique_values)
+
+
+
+Q6. To find the unique values in a column of a Pandas DataFrame, you can use the unique() method. Here's an example:
+import pandas as pd
+
+df = pd.read_csv('filename.csv')
+unique_values = df['column_name'].unique()
+print(unique_values)
+
+
+
+
+Q7. To find the number of missing values in each column of a Pandas DataFrame, you can use the isnull() method to create a DataFrame of True/False values indicating where missing values are, and then use the sum() method to count the number of True values in each column. Here's an example:
+import pandas as pd
+df = pd.read_csv('filename.csv')
+missing_values = df.isnull().sum()
+print(missing_values)
+
+
+Q8. To fill missing values in a Pandas DataFrame with a specific value, you can use the fillna() method. Here's an example:
+import pandas as pd
+df = pd.read_csv('filename.csv')
+df = df.fillna(0)
+print(df.head())
+
+
+
+
+Q10. To merge two Pandas DataFrames on a specific column, you can use the merge() method. Here's an example:import pandas as pd
+df1 = pd.read_csv('filename1.csv')
+df2 = pd.read_csv('filename2.csv')
+merged_df = pd.merge(df1, df2, on='column_name')
+print(merged_df.head())
+
+
+
+Q11. To group data in a Pandas DataFrame by a specific column and apply an aggregation function, you can use the groupby() method. Here's an example:
+import pandas as pd
+df = pd.read_csv('filename.csv')
+grouped_df = df.groupby('column_name').mean()
+print(grouped_df.head())
+
+
+
+
+Q12. To pivot a Pandas DataFrame, you can use the pivot() method. Here's an example:
+import pandas as pd
+df = pd.read_csv('filename.csv')
+pivot_df = df.pivot(index='index_column', columns='column_to_pivot', values='value_column')
+print(pivot_df.head())
+
+
+Q13. To change the data type of a column in a Pandas DataFrame, you can use the astype() method. Here's an example:
+df = pd.read_csv('filename.csv')
+df['column_name'] = df['column_name'].astype(int)
+print(df.dtypes)
+
+
+
+
+
+
+
