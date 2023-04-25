@@ -119,6 +119,81 @@ print(df.dtypes)
 
 
 
+Q14. To sort a Pandas DataFrame by a specific column, you can use the sort_values() method. For example, to sort a DataFrame df by a column named "column_name", you can use the following code:
+df = df.sort_values(by='column_name')
+
+
+
+Q15. To create a copy of a Pandas DataFrame, you can use the copy() method. For example, to create a copy of a DataFrame df, you can use the following code:
+df_copy = df.copy()
+
+
+
+
+Q16. To filter rows of a Pandas DataFrame by multiple conditions, you can use the & operator to combine multiple conditions. For example, to filter a DataFrame df by two conditions where column "column1" equals 1 and column "column2" equals 2, you can use the following code:
+df_filtered = df[(df['column1'] == 1) & (df['column2'] == 2)]
+
+
+
+Q17. To calculate the mean of a column in a Pandas DataFrame, you can use the mean() method. For example, to calculate the mean of a column "column_name" in a DataFrame df, you can use the following code:
+mean_value = df['column_name'].mean()
+
+
+
+Q18. To calculate the standard deviation of a column in a Pandas DataFrame, you can use the std() method. For example, to calculate the standard deviation of a column "column_name" in a DataFrame df, you can use the following code:
+std_value = df['column_name'].std()
+
+
+
+
+Q19. To calculate the correlation between two columns in a Pandas DataFrame, you can use the corr() method. For example, to calculate the correlation between columns "column1" and "column2" in a DataFrame df, you can use the following code:
+correlation = df['column1'].corr(df['column2'])
+
+
+
+
+Q20. To select specific columns in a DataFrame using their labels, you can use the indexing operator [] with a list of column labels. For example, to select columns "column1" and "column2" in a DataFrame df, you can use the following code:
+selected_columns = df[['column1', 'column2']]
+
+
+
+
+Q21. To select specific rows in a DataFrame using their indexes, you can use the loc[] method. For example, to select rows with index values 0, 1, and 2 in a DataFrame df, you can use the following code:
+selected_rows = df.loc[[0, 1, 2]]
+
+
+
+Q22. To sort a DataFrame by a specific column, you can use the sort_values() method. For example, to sort a DataFrame df by a column named "column_name" in descending order, you can use the following code:
+df_sorted = df.sort_values(by='column_name', ascending=False)
+
+
+
+
+Q23. To create a new column in a DataFrame based on the values of another column, you can use the indexing operator [] and assign the new column with a value calculated from the existing column. For example, to create a new column "new_column" in a DataFrame df based on the values of an existing column "column_name", you can use the following code:
+df['new_column'] = df['column_name'] * 2
+
+
+
+Q24. To remove duplicates from a Pandas DataFrame, you can use the drop_duplicates method. This method returns a new DataFrame with the duplicate rows removed. By default, the drop_duplicates method considers all columns when identifying duplicate rows, but you can also specify a subset of columns to consider by passing a list of column names to the subset parameter. Here's an example:
+import pandas as pd
+df = pd.DataFrame({'A': [1, 2, 3, 2], 'B': ['foo', 'bar', 'foo', 'baz']})
+df = df.drop_duplicates()
+print(df)
+
+
+
+
+Q25. In Pandas, .loc is used to select rows and columns by label, while .iloc is used to select rows and columns by integer index. Here are some examples of how to use these methods:
+import pandas as pd
+df = pd.DataFrame({'A': [1, 2, 3], 'B': ['foo', 'bar', 'baz']}, index=['x', 'y', 'z'])
+print(df.loc['x', 'A'])  # outputs 1
+print(df.iloc[0, 0])  # outputs 1
+print(df.loc['y'])  # outputs a series with values 2 and 'bar'
+print(df.iloc[1])  # outputs a series with values 2 and 'bar'
+print(df.loc[['x', 'z'], ['A', 'B']])  # outputs a dataframe with rows x and z and columns A and B
+print(df.iloc[[0, 2], [0, 1]])  # outputs a dataframe with rows 0 and 2 and columns 0 and 1
+
+
 
 
 
